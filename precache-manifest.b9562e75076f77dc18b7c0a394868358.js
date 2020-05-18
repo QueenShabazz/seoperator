@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae0b1129465930e2758fe819661a16c6",
+    "revision": "fdb195cd3238e644c6c427daf2e0060d",
     "url": "/seosift/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/seosift/static/css/2.7ad897a5.chunk.css"
   },
   {
-    "revision": "57b3ff41b65bd51d537d",
+    "revision": "eda59561ed0695c97c2c",
     "url": "/seosift/static/css/main.0b00141f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/seosift/static/js/2.412b39e6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "57b3ff41b65bd51d537d",
-    "url": "/seosift/static/js/main.70fd565b.chunk.js"
+    "revision": "eda59561ed0695c97c2c",
+    "url": "/seosift/static/js/main.c0e0704d.chunk.js"
   },
   {
     "revision": "b2e253104717d98fd530",
