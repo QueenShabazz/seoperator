@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fdb195cd3238e644c6c427daf2e0060d",
+    "revision": "eec13ee5cd31003c9fe57b31c1cc7a7e",
     "url": "/seosift/index.html"
   },
   {
-    "revision": "cd21b5e4598ee8f4b659",
+    "revision": "570013a2cda302ad519c",
     "url": "/seosift/static/css/2.7ad897a5.chunk.css"
   },
   {
-    "revision": "eda59561ed0695c97c2c",
+    "revision": "a27c750e892157fc6687",
     "url": "/seosift/static/css/main.0b00141f.chunk.css"
   },
   {
-    "revision": "cd21b5e4598ee8f4b659",
-    "url": "/seosift/static/js/2.412b39e6.chunk.js"
+    "revision": "570013a2cda302ad519c",
+    "url": "/seosift/static/js/2.18ca3cca.chunk.js"
   },
   {
     "revision": "88a28bf9811004a7250f8b652924c27d",
-    "url": "/seosift/static/js/2.412b39e6.chunk.js.LICENSE.txt"
+    "url": "/seosift/static/js/2.18ca3cca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eda59561ed0695c97c2c",
-    "url": "/seosift/static/js/main.c0e0704d.chunk.js"
+    "revision": "a27c750e892157fc6687",
+    "url": "/seosift/static/js/main.199e1adb.chunk.js"
   },
   {
     "revision": "b2e253104717d98fd530",
