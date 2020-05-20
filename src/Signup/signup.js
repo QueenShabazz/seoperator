@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import * as firebase from 'firebase/app';
 import 'firebase/auth';
+import * as firebase from 'firebase/app';
 
 class Signup extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class Signup extends Component {
       err: ''
     }
     this.signup = this.signup.bind(this);
-
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
@@ -38,7 +37,7 @@ class Signup extends Component {
       window.location("/login")
   }
   componentDidMount() {
-    this.authListener();
+    // this.authListener();
   }
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {

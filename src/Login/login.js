@@ -4,7 +4,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import withFirebaseAuth from '../firebaseConfig';
 
 export default class Login extends Component {
   constructor(props) {

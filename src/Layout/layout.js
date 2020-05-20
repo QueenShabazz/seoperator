@@ -24,35 +24,35 @@ const Layout = ({ children }) => (
         <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
-        <Nav.Link href="/saved/#saved">Saved Sites</Nav.Link>
-          <Nav.Link href="/blog/#blog">Blog</Nav.Link>
-          <NavDropdown title="More" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/login/#login">Logout</NavDropdown.Item>
-            <NavDropdown.Item href="/privacy/#privacy">Privacy</NavDropdown.Item>
-            <NavDropdown.Divider />
-          </NavDropdown> 
-        </Nav> 
+          <Nav className="mr-auto">
+            <Nav.Link href="/saved/#saved">Saved Sites</Nav.Link>
+            <Nav.Link href="/blog/#blog">Blog</Nav.Link>
+            <NavDropdown title="More" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/login/#login">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="/privacy/#privacy">Privacy</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </NavDropdown>
+          </Nav>
         </Navbar.Collapse>
 
       </Navbar> :
       <Navbar sticky="top" collapseOnSelect expand="sm" bg="dark" variant="dark">
-          <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-          <Nav.Link href="/blog/#blog">Blog</Nav.Link>
-          <Nav.Link href="/signup/#signup"> Signup </Nav.Link>
-          <NavDropdown title="More" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/login/#login">Login</NavDropdown.Item>
-            <NavDropdown.Item href="/privacy/#privacy">Privacy</NavDropdown.Item>
-            <NavDropdown.Divider />
-          </NavDropdown>
+            <Nav.Link href="/blog/#blog">Blog</Nav.Link>
+            <Nav.Link href="/signup/#signup"> Signup </Nav.Link>
+            <NavDropdown title="More" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/login/#login">Login</NavDropdown.Item>
+              <NavDropdown.Item href="/privacy/#privacy">Privacy</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </NavDropdown>
           </Nav>
           <Form inline>
             <Search />
           </Form>
-          </Navbar.Collapse>
+        </Navbar.Collapse>
       </Navbar>}
     <br></br>
     <div style={{ width: "100%" }}>{children}</div>
