@@ -25,7 +25,7 @@ const Layout = ({ children }) => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/saved/#saved">Saved Sites</Nav.Link>
+            <Nav.Link href="/saved#saved">Saved Sites</Nav.Link>
             <Nav.Link href="/blog/#blog">Blog</Nav.Link>
             <NavDropdown title="More" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/login/#login">Logout</NavDropdown.Item>
@@ -33,8 +33,10 @@ const Layout = ({ children }) => (
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
+          <Form inline>
+            <Search />
+          </Form>
         </Navbar.Collapse>
-
       </Navbar> :
       <Navbar sticky="top" collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>

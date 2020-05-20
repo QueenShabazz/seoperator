@@ -17,8 +17,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <>
-   <HashRouter basename='/'>
-    <Router>
+   {/* <HashRouter basename='/'> */}
+    <Router basename='/'>
       <Layout>
       <Switch>
         <Route exact path={["/blog", "/"]}>
@@ -46,7 +46,7 @@ function App() {
       </Switch> 
      </Layout>
     </Router>
-    </HashRouter>
+    {/* </HashRouter> */}
 </>
 
 

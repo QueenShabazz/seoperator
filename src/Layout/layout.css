@@ -1,6 +1,6 @@
 .btn{
 	height: fit-content;
-    padding: 0 25px;
+    margin: 0;
 }
 
 .main{
@@ -216,6 +216,10 @@ script{
 	font-size: 16px;
 	padding: 4%;
 } */
+
+.input-group{
+	align-items: center;
+}
 
 #submit{
 	height: 50px;
