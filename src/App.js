@@ -9,15 +9,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  HashRouter
-} from "react-router-dom";
+} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useHistory} from "react-router-dom";
 
 function App() {
+  let history = useHistory()
   return (
     <>
-   {/* <HashRouter basename='/'> */}
     <Router basename='/'>
       <Layout>
       <Switch>
@@ -38,7 +38,7 @@ function App() {
         {/* <Layout>
       <Switch> */}
       <Route exact path="/signup">
-           <Signup/>
+           <Signup history/>
         </Route>
       <Route exact path="/privacy">
         <Privacy />
@@ -46,7 +46,6 @@ function App() {
       </Switch> 
      </Layout>
     </Router>
-    {/* </HashRouter> */}
 </>
 
 

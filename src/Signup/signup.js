@@ -4,6 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import 'firebase/auth';
 import * as firebase from 'firebase/app';
+import { withRouter } from 'react-router';
 
 class Signup extends Component {
   constructor(props) {
@@ -17,24 +18,23 @@ class Signup extends Component {
     this.signup = this.signup.bind(this);
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
-
   }
+
+  
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
- 
   signup(e) {
     e.preventDefault();
-    console.log("STATE", this.state.email, this.state.password)
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-    }).then((u) => { console.log(u, 'congrats!') })
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => { 
+      window.location.reload(false)
+     })
       .catch((error) => {
         console.log(error);
         this.setState({ err: error.message })
       })
-      window.location("/login")
+      this.props.history.push('/login')
   }
   componentDidMount() {
     // this.authListener();
@@ -52,6 +52,7 @@ class Signup extends Component {
     })
   }
   render() {
+    console.log('sign', this.props)
     return (
 
       <>
@@ -93,4 +94,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default withRouter(Signup)

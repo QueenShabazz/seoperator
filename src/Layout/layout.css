@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+div#load > div.spinner-border{
+	background: transparent !important;
+}
+
 .main{
     display: flex;
     flex-direction: column;

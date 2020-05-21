@@ -16,9 +16,6 @@ export default class Login extends Component {
       err: ''
     }
     this.logout = this.logout.bind(this);
-    this.signup = this.signup.bind(this);
-    this.login = this.login.bind(this);
-
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
@@ -52,15 +49,6 @@ export default class Login extends Component {
 
   }
 
-  signup(e) {
-    e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-    }).then((u) => { console.log(u) })
-      .catch((error) => {
-        console.log(error);
-        this.setState({ err: error.message })
-      })
-  }
   componentDidMount() {
     this.authListener();
   }

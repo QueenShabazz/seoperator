@@ -18,7 +18,6 @@ export default class Search extends Component{
               return response.json();
             })
             .then(data => {
-              console.log(data.articles)
               this.setState({test:  data.articles.map(blog=>{
                 return <Card text="light" bg="dark" style={{ width: '18rem' }}> 
                <a target="_blank" href={blog.url}> <Card.Img variant="top" src={blog.urlToImage} /> </a>
