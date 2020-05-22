@@ -31,12 +31,6 @@ function App() {
       <Route exact path="/search"> 
         <Search />
       </Route>    
-       {/* </Switch> 
-     </Layout>
-      </Router>  */}
-      {/* <Router> */}
-        {/* <Layout>
-      <Switch> */}
       <Route exact path="/signup">
            <Signup history/>
         </Route>
