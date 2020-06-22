@@ -100,7 +100,7 @@ export default class Search extends Component {
                 <small>{this.state.url} </small>
                 <p style={{ color: "white" }}></p>
               </Card.Text>
-              <Button variant="warning">Save Website Info</Button>
+              <Button variant="warning" onClick={()=>console.log(this.state.result, this.state.url)}>Save Website Info</Button>
             </Card.Body>
           }
         </div>
