@@ -59,10 +59,9 @@ const Layout = ({ children }) => (
     <br></br>
     <div style={{ width: "100%" }}>{children}</div>
     <footer>
-
+    <p style={{color: "white"}}> Check out this promo deal to get better rankings on your SEO with <a style={{color: "white", fontWeight: 900}} target="_blank" href="https://83930et1x9-hbo0eqodeog7xb0.hop.clickbank.net/">Long Tail Pro</a></p>
       <small>&copy; Copyright 2020,
     <a target="_blank" rel="noopener noreferrer" href="http://queenscript.com/">Queenscript</a></small>
-    <p style={{color: "white"}}> Check out this promo deal to get better rankings on your SEO with <a style={{color: "white", fontWeight: 900}} target="_blank" href="https://83930et1x9-hbo0eqodeog7xb0.hop.clickbank.net/">Long Tail Pro</a></p>
     </footer>
   </div>
 )

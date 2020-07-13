@@ -17,7 +17,7 @@ export default class Search extends Component{
 
     componentDidMount(){
         fetch (
-            "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=('+search%20+engine%20+optimization' OR '+SEO')&sortBy=publishedAt&language=en&apiKey=f5ae70fe95da4ca892c7027bd1ee6b10")
+            "")
             .then(response => {
               return response.json();
             })
