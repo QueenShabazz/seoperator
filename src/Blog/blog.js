@@ -22,8 +22,8 @@ export default class Search extends Component{
               return response.json();
             })
             .then(data => {
-                console.log(data)
-              this.setState({test:  data.articles.map(blog=>{
+                console.log(data[0])
+              this.setState({test:  data[0].articles.map(blog=>{
                 return <Card text="light" bg="dark" style={{ width: '18rem' }}> 
                <a target="_blank" href={blog.url}> <Card.Img variant="top" src={blog.urlToImage} /> </a>
                 <Card.Body>
