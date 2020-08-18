@@ -15,8 +15,8 @@ export default class Search extends Component{
 
     //POST REQUEST TO JAVA SERVER + FIREBASE 
 
-    componentDidMount(){
-        fetch (
+    async componentDidMount(){
+        await fetch (
             "https://cors-anywhere.herokuapp.com/https://seosift.herokuapp.com/demo/api", {
                 method: "GET",
                 headers:{
