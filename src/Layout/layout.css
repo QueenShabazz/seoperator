@@ -1,3 +1,7 @@
+/* linear-gradient(#eb01a5, #d13531) */
+.jumbotron{
+	background-image: linear-gradient(to top, rgba(245, 246, 252, 0.5), rgba(0, 0, 0, 1)), url('https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+}
 .btn{
 	height: fit-content;
     margin: 0;
