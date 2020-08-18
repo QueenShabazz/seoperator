@@ -17,7 +17,7 @@ export default class Search extends Component{
 
     componentDidMount(){
         fetch (
-            "https://cors-anywhere.herokuapp.com/https://seosift.herokuapp.com/demo/api")
+            "https://seosift.herokuapp.com/demo/api")
             .then(response => {
               return response.json();
             })
