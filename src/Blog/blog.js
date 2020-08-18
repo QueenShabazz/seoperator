@@ -17,7 +17,13 @@ export default class Search extends Component{
 
     componentDidMount(){
         fetch (
-            "https://seosift.herokuapp.com/demo/api")
+            "https://seosift.herokuapp.com/demo/api", {
+                method: "GET",
+                headers:{
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'http://seosift.com'
+                }
+            })
             .then(response => {
               return response.json();
             })
