@@ -33,6 +33,10 @@
     }
     
     }
+
+    .card{
+        width: 100% !important;
+    }
 /* 
 @media only screen and (max-width: 900px){
 .card-columns {
@@ -43,4 +47,4 @@
     widows: 1;
 }
 
-} */
+} */ 

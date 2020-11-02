@@ -17,7 +17,7 @@ export default class Search extends Component{
 
     async componentDidMount(){
         await fetch (
-            "https://cors-anywhere.herokuapp.com/https://seosift.herokuapp.com/demo/api", {
+            "https://cors-anywhere.herokuapp.com/https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export default class Search extends Component{
               return response.json();
             })
             .then(data => {
-              this.setState({test:  data[0].articles.map(blog=>{
+              this.setState({test:  data.map(blog=>{
                 return <Card text="light" bg="dark" style={{ width: '18rem' }}> 
                <a target="_blank" href={blog.url}> <Card.Img variant="top" src={blog.urlToImage} /> </a>
                 <Card.Body>
