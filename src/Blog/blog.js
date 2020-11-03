@@ -16,7 +16,7 @@ function MyVerticallyCenteredModal(props) {
         >
         <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-            Want to Save <br></br><em>{props.title.filter(
+            Want to Save <em>{props.title.filter(
                 i=>i===props.target
             ).toString()}</em>?
             </Modal.Title>
@@ -81,7 +81,7 @@ export default class Search extends Component{
                 </Card.Body>
                 <Card.Body>
                     <Card.Link target="_blank" href={blog.url}> Link to Original Article</Card.Link>
-                    <Button id={blog.title} onClick={(e) => {this.setState({setModalShow: true});this.setState({target:e.target.getAttribute("id")}); console.log(this.state.target)}}> Save Article</Button>
+                    <Button id={blog.title} onClick={(e) => {this.setState({setModalShow: true});this.setState({target:e.target.getAttribute("id")});}}> Save Article</Button>
                 </Card.Body>
                 
                 </Card>
@@ -93,7 +93,6 @@ export default class Search extends Component{
             }
         )
     }
-
     componentDidUpdate(prevProps, prevState){
          if (prevState.setModalShow !== this.state.setModalShow) {
             this.setState({setModalShow: true})
@@ -101,8 +100,7 @@ export default class Search extends Component{
             
           }
     }
-        
-    
+
     render() {
         return (
         <>
@@ -116,6 +114,7 @@ export default class Search extends Component{
                 onHide={()=>{this.setState({setModalShow: false}); this.state.setModalShow=false}}
                 title={this.state.title}
                 target={this.state.target}
+                test={this.state.test}
                 />: <></>
                 }
         </>

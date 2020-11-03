@@ -6,6 +6,10 @@
     column-count: 2;
     column-gap: 10px;
 } */
+em{
+    font-weight: 300;
+    color: gray;
+}
 @media (min-width: 576px){
 .card-columns {
 
