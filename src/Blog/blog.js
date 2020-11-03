@@ -14,8 +14,6 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         >
-        {console.log(props.target)}
-        {console.log(props.title, 'help')}
         <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
             Want to Save <br></br><em>{props.title.filter(
