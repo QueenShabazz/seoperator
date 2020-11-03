@@ -12,10 +12,10 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 
 function App() {
-  let history = useHistory()
+  // let history = useHistory()
   return (
     <>
     <Router basename='/'>
