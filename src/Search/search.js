@@ -45,7 +45,8 @@ export default class Search extends Component {
           let wp = res.includes("wp-content")
           let wix = res.includes("wix")
           let square = res.includes("squarespace")
-          let shopify = res.includes("shopify")
+          let shopify = res.includes("Shopify")
+          let react = res.includes("webpack")
           // let other = res.includes("cdn")
 
           if (duda === true) {
@@ -62,6 +63,9 @@ export default class Search extends Component {
           }
           else if (shopify === true) {
             this.setState({ result: "Shopify" })
+          }
+          else if (react === true) {
+            this.setState({ result: "Site Built With React" })
           }
           else {
             this.setState({ result: "Ngix Web Server" })

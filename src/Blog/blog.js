@@ -2,20 +2,52 @@ import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import CardColumns from 'react-bootstrap/CardColumns';
+import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './blog.css'
+//REFACTOR INTO STATELESS COMPONENT TO USE HOOKS FOR POPUP MODAL
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Want to Save this Article?
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Signup to SEOSift!</h4>
+          <p>
+            This is your one-stop-shop for all things SEO related.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={()=>{props.onHide()}}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default class Search extends Component{
     constructor(props){
         super(props)
            this.state={ 
-               test: []
+            test: [],
+            setModalShow: false,
         }
     }
+    
+      
+
 
     //POST REQUEST TO JAVA SERVER + FIREBASE 
-
+    
     async componentDidMount(){
+        
         await fetch (
             "https://cors-anywhere.herokuapp.com/https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
@@ -29,7 +61,7 @@ export default class Search extends Component{
             })
             .then(data => {
               this.setState({test:  data.map(blog=>{
-                return <Card text="light" bg="dark" style={{ width: '18rem' }}> 
+                return <><Card text="light" bg="dark" style={{ width: '18rem' }}> 
                <a target="_blank" href={blog.url}> <Card.Img variant="top" src={blog.urlToImage} /> </a>
                 <Card.Body>
                     <Card.Title>{ blog.title}</Card.Title>
@@ -47,23 +79,47 @@ export default class Search extends Component{
                 </Card.Body>
                 <Card.Body>
                     <Card.Link target="_blank" href={blog.url}> Link to Original Article</Card.Link>
-                    <Button onClick={()=>console.log(blog.content)}> Save Article</Button>
+                    <Button onClick={() => {this.setState({setModalShow: true})}}> Save Article</Button>
                 </Card.Body>
-                </Card>})
+                
+                </Card>
+                
+                </>
+            })
                       
               })
             }
         )
     }
-          
+
+    componentDidUpdate(prevProps, prevState){
+         if (prevState.setModalShow !== this.state.setModalShow) {
+            this.setState({setModalShow: true})
+            // console.log('pokemons state has changed.', this.state.setModalShow )
+            
+          }
+    }
+        
+    
     render() {
+       
+
         return (
         <>
         <div id="blog" style={{height: "10vh"}}></div>
         <CardColumns > 
              {this.state.test} 
         </CardColumns>
-
+        {this.state.setModalShow ?
+                <MyVerticallyCenteredModal
+                show={this.state.setModalShow}
+                onHide={()=>{this.setState({setModalShow: false}); this.state.setModalShow=false}}
+                />: <MyVerticallyCenteredModal
+                show={this.state.setModalShow}
+                onHide={()=>this.setState({setModalShow: false})}
+                test={this.state}
+                />
+                }
         </>
         )
     }
