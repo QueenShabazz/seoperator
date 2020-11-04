@@ -10,10 +10,9 @@ import Alert from 'react-bootstrap/Alert';
 
 const history = createHistory();
 function AlertDismissibleExample(props) {
-
   if (props.err) {
     return (
-      <Alert variant="danger" onClose={() => {props.setShow(); console.log("clicked")}} dismissible>
+      <Alert variant="danger" onClose={() => {props.setShow()}} dismissible>
         <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
        {props.err}
       </Alert>
@@ -76,8 +75,8 @@ class Signup extends Component {
         </h1>
         {/* {this.state.err} */}
         <AlertDismissibleExample 
-          show={this.state.show}
-          setShow={()=>{this.state.show===true?this.setState({show: false}): this.setState({show:true})}}
+          show={true}
+          setShow={()=>{this.setState({err: ""}); this.state.err=""}}
           err={this.state.err}
         />
         <div style={{ padding: 30 }}>

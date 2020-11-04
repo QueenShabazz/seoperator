@@ -107,7 +107,7 @@ export default class Login extends Component {
         </h1>
         <AlertDismissibleExample 
           show={this.state.show}
-          setShow={()=>{this.setState({show:false}); this.state.show=false}}
+          setShow={()=>{this.setState({err:""}); this.state.err=""}}
           err={this.state.err}
         />
         <div style={{ padding: 30 }}>

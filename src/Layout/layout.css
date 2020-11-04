@@ -289,8 +289,8 @@ script{
 	padding: 10% 0;
 }
 
-a:hover{
-	color: #ffffff70;
+a:hover {
+    color: grey;
 }
 
 #news{

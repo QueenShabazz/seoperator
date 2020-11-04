@@ -21,10 +21,11 @@ const Layout = ({ children }) => (
     </Jumbotron>
     {localStorage.user ?
       <Navbar sticky="top" collapseOnSelect expand="sm" bg="dark" variant="dark">
-        <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>
+        <Navbar.Brand href="/">SEOSIFT </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
+ 
             <Nav.Link href="/blog/#blog">Blog</Nav.Link>
             <Nav.Link href="/saved#saved">Saved Sites</Nav.Link>
             <NavDropdown title="More" id="collasible-nav-dropdown">
@@ -32,6 +33,9 @@ const Layout = ({ children }) => (
               <NavDropdown.Item href="/privacy/#privacy">Privacy</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
+            <Navbar.Text>
+              Signed in as: <a href="/login/#login">User {localStorage.user}</a>
+            </Navbar.Text>
           </Nav>
           <Form inline>
             <Search />
