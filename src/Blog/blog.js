@@ -8,6 +8,7 @@ import './blog.css'
 //REFACTOR INTO STATELESS COMPONENT TO USE HOOKS FOR POPUP MODAL
 function MyVerticallyCenteredModal(props) {
     return (
+        !localStorage.user?
         <Modal
         {...props}
         size="lg"
@@ -22,13 +23,34 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h4>Signup to SEOSift!</h4>
+            <a href="/signup/#signup"><h4>Signup to SEOSift!</h4></a>
            
         </Modal.Body>
         <Modal.Footer>
             <Button onClick={()=>{props.onHide()}}>Close</Button>
         </Modal.Footer>
-        </Modal>
+        </Modal>:
+         <Modal
+         {...props}
+         size="lg"
+         aria-labelledby="contained-modal-title-vcenter"
+         centered
+         >
+         <Modal.Header closeButton>
+             <Modal.Title id="contained-modal-title-vcenter">
+             You Saved <em>{props.title.filter(
+                 i=>i===props.target
+             ).toString()}</em>
+             </Modal.Title>
+         </Modal.Header>
+         <Modal.Body>
+             {/* <a href="/signup/#signup"><h4>Signup to SEOSift!</h4></a> */}
+            View <a href="/saved">your saved articles</a>
+         </Modal.Body>
+         <Modal.Footer>
+             <Button onClick={()=>{props.onHide()}}>Close</Button>
+         </Modal.Footer>
+         </Modal>
     );
   }
 
@@ -81,6 +103,7 @@ export default class Search extends Component{
                 </Card.Body>
                 <Card.Body>
                     <Card.Link target="_blank" href={blog.url}> Link to Original Article</Card.Link>
+                    
                     <Button id={blog.title} onClick={(e) => {this.setState({setModalShow: true});this.setState({target:e.target.getAttribute("id")});}}> Save Article</Button>
                 </Card.Body>
                 

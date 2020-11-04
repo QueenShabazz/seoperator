@@ -5,6 +5,9 @@ import FormControl from 'react-bootstrap/FormControl';
 import 'firebase/auth';
 import * as firebase from 'firebase/app';
 import { withRouter } from 'react-router';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
 
 class Signup extends Component {
   constructor(props) {
@@ -25,23 +28,20 @@ class Signup extends Component {
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-  signup(e) {
+  signup(e, err) {
     e.preventDefault();
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => { 
-      window.location.reload(false)
-     })
-      .catch((error) => {
-        console.log(error);
+      // window.location.reload(false)
+      history.go(0)
+    })
+    .catch((error) => {
+      console.error(error)
         this.setState({ err: error.message })
-      })
-      this.props.history.push('/login')
+    })
   }
-  componentDidMount() {
-    // this.authListener();
-  }
+
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user)
       if (user) {
         this.setState({ user })
         localStorage.setItem('user', user.uid)
@@ -52,9 +52,7 @@ class Signup extends Component {
     })
   }
   render() {
-    console.log('sign', this.props)
     return (
-
       <>
       <div  id="signup" style={{height: "15vh"}}></div>
         <h1 id="#login">
@@ -84,7 +82,7 @@ class Signup extends Component {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-          <Button onClick={(e) => this.signup(e)}>
+          <Button onClick={(e) => this.signup(e, this.state.err)}>
             Sign Up
           </Button>
 

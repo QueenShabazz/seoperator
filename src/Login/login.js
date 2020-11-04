@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as firebase from 'firebase/app';
 import withFirebaseAuth from '../firebaseConfig';
+import createHistory from 'history/createBrowserHistory';
+//must go outside of class
+const history = createHistory();
 
 export default class Login extends Component {
   constructor(props) {
@@ -18,34 +21,45 @@ export default class Login extends Component {
     this.logout = this.logout.bind(this);
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
+    
 
   }
-
+  
+  
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   login(e) {
     e.preventDefault();
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-      window.location.reload(false)
+      history.go(0)
+
 
     }).catch((error) => {
-      console.log(error);
       this.setState({err:error.message})
     });
   }
 
   logout(e) {
+   
     e.preventDefault();
-    firebase.auth().signOut().then(function() {
+    firebase.auth().signOut()
+    .then(
+      function() {
       // Sign-out successful.
-      window.location.reload(false)
+      history.go(0)
+
+      
+      this.setState({user: null})
+      localStorage.removeItem('user')
+      
+
+
+
     }).catch(function(error) {
       // An error happened.
     })
-    this.setState({user: null})
-    localStorage.removeItem('user')
+    
 
   }
 
@@ -54,7 +68,6 @@ export default class Login extends Component {
   }
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user)
       if (user) {
         this.setState({ user })
         localStorage.setItem('user', user.uid)
@@ -66,7 +79,6 @@ export default class Login extends Component {
   }
 
   render() {
-    console.log(this.state.user, "emailz")
     return (
       <>
         <div  id="login" style={{height: "15vh"}}></div>

@@ -12,11 +12,13 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function App() {
-  // let history = useHistory()
+  let history = useHistory()
+  console.log(localStorage.user)
   return (
+    localStorage.user ?
     <>
     <Router basename='/'>
       <Layout>
@@ -28,9 +30,33 @@ function App() {
         <Login />
       </Route>
        
-      <Route exact path="/search"> 
+      {/* <Route exact path="/search"> 
         <Search />
-      </Route>    
+      </Route>     */}
+      {/* <Route exact path="/signup">
+           <Signup history/>
+        </Route> */}
+      <Route exact path="/privacy">
+        <Privacy />
+      </Route>
+      </Switch> 
+     </Layout>
+    </Router>
+</>:
+<>
+    <Router basename='/'>
+      <Layout>
+      <Switch>
+        <Route exact path={["/blog", "/"]}>
+          <Blog/>
+        </Route>
+        <Route exact path="/login">
+        <Login />
+      </Route>
+       
+      {/* <Route exact path="/search"> 
+        <Search />
+      </Route>     */}
       <Route exact path="/signup">
            <Signup history/>
         </Route>
