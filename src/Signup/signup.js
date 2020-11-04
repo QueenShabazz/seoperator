@@ -10,7 +10,6 @@ import Alert from 'react-bootstrap/Alert';
 
 const history = createHistory();
 function AlertDismissibleExample(props) {
-  // const [show, setShow] = useState(true);
 
   if (props.err) {
     return (

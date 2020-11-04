@@ -16,7 +16,7 @@ function AlertDismissibleExample(props) {
 
   if (props.err) {
     return (
-      <Alert variant="danger" onClose={() => {props.setShow(); console.log("clicked"); console.log(props)}} dismissible>
+      <Alert variant="danger" onClose={() => {props.setShow();}} dismissible>
         <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
        {props.err}
       </Alert>
@@ -107,7 +107,7 @@ export default class Login extends Component {
         </h1>
         <AlertDismissibleExample 
           show={this.state.show}
-          setShow={()=>{this.state.show===true?this.setState({show: false}): this.setState({show:true})}}
+          setShow={()=>{this.setState({show:false}); this.state.show=false}}
           err={this.state.err}
         />
         <div style={{ padding: 30 }}>
