@@ -4,11 +4,10 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import 'firebase/auth';
 import * as firebase from 'firebase/app';
-import { withRouter } from 'react-router';
-import createHistory from 'history/createBrowserHistory';
 import Alert from 'react-bootstrap/Alert';
 
-const history = createHistory();
+
+
 function AlertDismissibleExample(props) {
   if (props.err) {
     return (
@@ -21,7 +20,7 @@ function AlertDismissibleExample(props) {
    return (<></>)
 }
 
-class Signup extends Component {
+export default class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,40 +31,46 @@ class Signup extends Component {
       show: true
     }
     this.signup = this.signup.bind(this);
-    this.authListener = this.authListener.bind(this);
+    // this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
-  
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-  signup(e, err) {
+
+  signup(e) {
     e.preventDefault();
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
     .then((u) => { 
       // window.location.reload(false)
+      // (console.log(history))
       // history.push("/login")
-      window.location="/login"
+      // this.props.history.push('/');
+            
+            //  localStorage.setItem('user', u)
+            //  console.log(u);
+            //  authListener() {
+              firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                  this.setState({ user })
+                  localStorage.setItem('user', user.uid)
+                } else {
+                  this.setState({ user: null })
+                  localStorage.removeItem('user')
+                }
+              })
+              this.props.history.push('/login');
+            // }
+             
+      
     })
     .catch((error) => {
-      console.error(error)
         this.setState({ err: error.message })
     })
   }
 
-  authListener() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user })
-        localStorage.setItem('user', user.uid)
-      } else {
-        this.setState({ user: null })
-        localStorage.removeItem('user')
-      }
-    })
-  }
+ 
   render() {
     return (
       <>
@@ -102,7 +107,7 @@ class Signup extends Component {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-          <Button onClick={(e) => this.signup(e, this.state.err)}>
+          <Button onClick={(e) => this.signup(e)}>
             Sign Up
           </Button>
 
@@ -112,5 +117,3 @@ class Signup extends Component {
     )
   }
 }
-
-export default withRouter(Signup);

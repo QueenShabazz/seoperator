@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Search from '../Search/search'
 import "./layout.css"
+import { withRouter } from "react-router";
 
 const Layout = ({ children }) => (
   <div className="main">
@@ -20,12 +21,12 @@ const Layout = ({ children }) => (
       </p>
     </Jumbotron>
     {localStorage.user ?
+    
       <Navbar sticky="top" collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Navbar.Brand href="/">SEOSIFT </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
- 
             <Nav.Link href="/blog/#blog">Blog</Nav.Link>
             <Nav.Link href="/saved#saved">Saved Sites</Nav.Link>
             <NavDropdown title="More" id="collasible-nav-dropdown">
@@ -41,7 +42,8 @@ const Layout = ({ children }) => (
             <Search />
           </Form>
         </Navbar.Collapse>
-      </Navbar> :
+{      
+}      </Navbar> :
       <Navbar sticky="top" collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Navbar.Brand href="/">SEOSIFT</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -70,4 +72,4 @@ const Layout = ({ children }) => (
   </div>
 )
 
-export default Layout
+export default withRouter(Layout);

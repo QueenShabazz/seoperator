@@ -13,7 +13,6 @@ const history = createHistory();
 
 function AlertDismissibleExample(props) {
   // const [show, setShow] = useState(true);
-
   if (props.err) {
     return (
       <Alert variant="danger" onClose={() => {props.setShow();}} dismissible>
@@ -24,6 +23,7 @@ function AlertDismissibleExample(props) {
   }
    return (<></>)
 }
+
 export default class Login extends Component {
   constructor(props) {
     super(props)
@@ -36,20 +36,17 @@ export default class Login extends Component {
     this.logout = this.logout.bind(this);
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    
-
   }
-  
   
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   login(e) {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then((u) => {
       window.location="/login"
-
-
     }).catch((error) => {
       this.setState({err:error.message})
     });
@@ -62,19 +59,13 @@ export default class Login extends Component {
       function() {
       // Sign-out successful.
       history.go(0)
-
       
       this.setState({user: null})
       localStorage.removeItem('user')
-      
-
-
 
     }).catch(function(error) {
       // An error happened.
-    })
-    
-
+    })  
   }
 
   componentDidMount() {
@@ -96,15 +87,14 @@ export default class Login extends Component {
     return (
       <>
         <div  id="login" style={{height: "15vh"}}></div>
-
-        {this.state.user ? <> <h1 id="#login">
-          Welcome Back {this.state.user.email}!
-                </h1>  
-          <Button onClick={this.logout}> Logout</Button></> :
-          <div>
-           <h1 id="#login">
-          Login 
-        </h1>
+        {this.state.user ? 
+        <> <h1 id="#login"> Welcome Back {this.state.user.email}!</h1>  
+          <Button onClick={this.logout}> Logout</Button></> 
+          :
+          
+          <>
+          {/* {history.go(0)} */}
+           <h1 id="#login"> Login</h1>
         <AlertDismissibleExample 
           show={this.state.show}
           setShow={()=>{this.setState({err:""}); this.state.err=""}}
@@ -138,7 +128,7 @@ export default class Login extends Component {
           </Button>
 
         </div>
-          </div>}
+          </>}
       </>
     )
   }
