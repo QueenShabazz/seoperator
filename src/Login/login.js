@@ -6,9 +6,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as firebase from 'firebase/app';
 import withFirebaseAuth from '../firebaseConfig';
 import createHistory from 'history/createBrowserHistory';
+import Alert from 'react-bootstrap/Alert';
+
 //must go outside of class
 const history = createHistory();
 
+function AlertDismissibleExample(props) {
+  // const [show, setShow] = useState(true);
+
+  if (props.err) {
+    return (
+      <Alert variant="danger" onClose={() => {props.setShow(); console.log("clicked"); console.log(props)}} dismissible>
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+       {props.err}
+      </Alert>
+    );
+  }
+   return (<></>)
+}
 export default class Login extends Component {
   constructor(props) {
     super(props)
@@ -41,7 +56,6 @@ export default class Login extends Component {
   }
 
   logout(e) {
-   
     e.preventDefault();
     firebase.auth().signOut()
     .then(
@@ -91,7 +105,11 @@ export default class Login extends Component {
            <h1 id="#login">
           Login 
         </h1>
-        {this.state.err}
+        <AlertDismissibleExample 
+          show={this.state.show}
+          setShow={()=>{this.state.show===true?this.setState({show: false}): this.setState({show:true})}}
+          err={this.state.err}
+        />
         <div style={{ padding: 30 }}>
           <InputGroup className="mb-3" name="email" onChange={this.handleChange}>
             <InputGroup.Prepend>

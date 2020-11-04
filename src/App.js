@@ -5,22 +5,20 @@ import Login from './Login/login';
 import Privacy from './Privacy/privacy';
 import Layout from './Layout/layout';
 import Blog from './Blog/blog';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import {Router} from 'react-router';
+import {Route, Switch} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useHistory} from "react-router-dom";
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory();
 
 function App() {
-  let history = useHistory()
   console.log(localStorage.user)
   return (
     localStorage.user ?
     <>
-    <Router basename='/'>
+    <Router history={history} basename='/' forceRefresh={true}>
       <Layout>
       <Switch>
         <Route exact path={["/blog", "/"]}>
@@ -44,7 +42,7 @@ function App() {
     </Router>
 </>:
 <>
-    <Router basename='/'>
+    <Router history={history} basename='/'>
       <Layout>
       <Switch>
         <Route exact path={["/blog", "/"]}>

@@ -6,8 +6,22 @@ import 'firebase/auth';
 import * as firebase from 'firebase/app';
 import { withRouter } from 'react-router';
 import createHistory from 'history/createBrowserHistory';
+import Alert from 'react-bootstrap/Alert';
 
 const history = createHistory();
+function AlertDismissibleExample(props) {
+  // const [show, setShow] = useState(true);
+
+  if (props.err) {
+    return (
+      <Alert variant="danger" onClose={() => {props.setShow(); console.log("clicked")}} dismissible>
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+       {props.err}
+      </Alert>
+    );
+  }
+   return (<></>)
+}
 
 class Signup extends Component {
   constructor(props) {
@@ -16,7 +30,8 @@ class Signup extends Component {
       user: {},
       email: '',
       password: '',
-      err: ''
+      err: '',
+      show: true
     }
     this.signup = this.signup.bind(this);
     this.authListener = this.authListener.bind(this);
@@ -30,9 +45,11 @@ class Signup extends Component {
   }
   signup(e, err) {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => { 
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then((u) => { 
       // window.location.reload(false)
-      history.go(0)
+      // history.push("/login")
+      window.location="/login"
     })
     .catch((error) => {
       console.error(error)
@@ -58,7 +75,12 @@ class Signup extends Component {
         <h1 id="#login">
           Signup 
         </h1>
-        {this.state.err}
+        {/* {this.state.err} */}
+        <AlertDismissibleExample 
+          show={this.state.show}
+          setShow={()=>{this.state.show===true?this.setState({show: false}): this.setState({show:true})}}
+          err={this.state.err}
+        />
         <div style={{ padding: 30 }}>
           <InputGroup className="mb-3" name="email" onChange={this.handleChange}>
             <InputGroup.Prepend>
@@ -87,9 +109,10 @@ class Signup extends Component {
           </Button>
 
         </div>
+       
       </>
     )
   }
 }
 
-export default withRouter(Signup)
+export default withRouter(Signup);
