@@ -16,11 +16,14 @@ div#load > div.spinner-border{
     flex-direction: column;
 	align-items: center;
 	text-align: center;
+	flex-wrap: wrap;
+	padding-bottom: auto;
 }
 
 .navbar{
 	width: 100vw;
 	border-bottom: 3px #00000047 solid;
+	padding: 5vh 5vh 0;
 }
 
 .jumbotron{
@@ -209,12 +212,12 @@ h2{
 	color: #ce532e;
 } */
 
-/* form{
-	border-right: 20px solid #b3b3b34a;
-    padding: 0 2%;
+form{
     height: 100%;
-    width: 100%;
-} */
+	width: 100%;
+	padding: 0; 
+	margin: 0;
+}
 
 /* #result-section{
 	display: flex;
@@ -235,6 +238,10 @@ script{
 	padding: 4%;
 } */
 
+.mr-auto.navbar-nav{
+	padding: 0; 
+	margin: 0;
+}
 .input-group{
 	align-items: center;
 }
@@ -338,6 +345,7 @@ ul#newsec > li > a > h3{
 	}
 	form {
 		border-right: none;
+	
 	}
 	h2{
 		padding: 0 22%;
