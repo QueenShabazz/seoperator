@@ -15,7 +15,6 @@ import "firebase/auth";
 import {
   FirebaseAuthProvider
 } from "react-firebase-auth-provider";
-import AdSense from 'react-adsense';
 
 const history = createHistory();
 const user = localStorage.user
@@ -54,14 +53,6 @@ function App() {
       <Route exact path="/privacy">
         <Privacy />
       </Route>
-
-      <AdSense.Google
-      client='ca-pub-8988366551421623'
-      slot='4555630407'
-      // style={{ display: 'block' }}
-      // layout='in-article'
-      // format='fluid'
-      />
       </Switch> 
      </Layout>
     </BrowserRouter> 
@@ -89,13 +80,7 @@ function App() {
         <Privacy />
       </Route>
       </Switch> 
-      <AdSense.Google
-      client='ca-pub-8988366551421623'
-      slot='4555630407'
-      // style={{ display: 'block' }}
-      // layout='in-article'
-      // format='fluid'
-      />
+      
      </Layout>
     </BrowserRouter>
  </>
