@@ -85,7 +85,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{flexDirection:"column"}}>
         <div  id="login" style={{height: "15vh"}}></div>
         {this.state.user ? 
         <> <h1 id="#login"> Welcome Back {this.state.user.email}!</h1>  
