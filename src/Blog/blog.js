@@ -78,8 +78,10 @@ export default class Search extends Component{
             "https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
+                    'crossDomain':true,
                     'mode': 'no-cors',
-                    'Access-Control-Allow-Origin': '*' ,
+                    'Access-Control-Allow-Credentials': true,
+                    'Access-Control-Allow-Origin': 'https://seosift.com',
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
                 }
