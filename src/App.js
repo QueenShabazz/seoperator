@@ -11,11 +11,17 @@ import { withRouter } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import createHistory from 'history/createBrowserHistory';
+import firebase from "firebase/app";
+import "firebase/auth";
+import { FirestoreProvider } from "@react-firebase/firestore";
+
 const history = createHistory();
 const user = localStorage.user
+
 function App() {
   return (
    user?
+   <FirebaseAuthProvider firebase={firebase} {...config}>
     <>
     <BrowserRouter history={history} basename='/' forceRefresh={true}>
       <Layout>
@@ -38,8 +44,11 @@ function App() {
       </Route>
       </Switch> 
      </Layout>
-    </BrowserRouter>
-</>:
+    </BrowserRouter> 
+</>
+</FirebaseAuthProvider>
+:
+<FirebaseAuthProvider firebase={firebase} {...config}>
  <> 
  
     <BrowserRouter history={history} basename='/' forceRefresh={true}>
@@ -64,8 +73,9 @@ function App() {
      </Layout>
     </BrowserRouter>
  </>
-
+</FirebaseAuthProvider>
   );
 }
+
 
 export default App;
