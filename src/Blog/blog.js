@@ -133,7 +133,7 @@ export default class Search extends Component{
 
     render() {
         return (
-        <>
+        <div style={{display: "block"}}>
         <div id="blog" style={{height: "10vh"}}></div>
         <CardColumns > 
              {this.state.test} 
@@ -147,7 +147,7 @@ export default class Search extends Component{
                 test={this.state.test}
                 />: <></>
                 }
-        </>
+        </div>
         )
     }
 }
