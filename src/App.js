@@ -54,16 +54,17 @@ function App() {
       <Route exact path="/privacy">
         <Privacy />
       </Route>
+
+      <AdSense.Google
+      client='ca-pub-8988366551421623'
+      slot='4555630407'
+      // style={{ display: 'block' }}
+      // layout='in-article'
+      // format='fluid'
+      />
       </Switch> 
      </Layout>
     </BrowserRouter> 
-    <AdSense.Google
-  client='ca-pub-8988366551421623'
-  slot='4555630407'
-  // style={{ display: 'block' }}
-  // layout='in-article'
-  // format='fluid'
-/>
 </>
 </FirebaseAuthProvider>
 :
@@ -88,16 +89,16 @@ function App() {
         <Privacy />
       </Route>
       </Switch> 
+      <AdSense.Google
+      client='ca-pub-8988366551421623'
+      slot='4555630407'
+      // style={{ display: 'block' }}
+      // layout='in-article'
+      // format='fluid'
+      />
      </Layout>
     </BrowserRouter>
  </>
- <AdSense.Google
- client='ca-pub-8988366551421623'
- slot='4555630407'
- // style={{ display: 'block' }}
- // layout='in-article'
- // format='fluid'
-/>
 </FirebaseAuthProvider>
   );
 }
