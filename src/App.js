@@ -16,7 +16,7 @@ import "firebase/auth";
 import {
   FirebaseAuthProvider
 } from "react-firebase-auth-provider";
-var cors = require('cors')
+import AdSense from 'react-adsense';
 
 const history = createHistory();
 const user = localStorage.user
@@ -30,7 +30,6 @@ const config = {
   appId: "1:7941375871:web:4131f01d6e9b4813ad3c4a",
   measurementId: "G-0V33FT5SN2"
 };
-import AdSense from 'react-adsense';
 
 function App() {
   return (
