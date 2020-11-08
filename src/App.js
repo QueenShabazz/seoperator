@@ -69,7 +69,6 @@ function App() {
 :
 <FirebaseAuthProvider firebase={firebase} {...config}>
  <> 
- 
     <BrowserRouter history={history} basename='/' forceRefresh={true}>
       <Layout>
       <Switch>
