@@ -78,6 +78,7 @@ export default class Search extends Component{
             "https://cors-anywhere.herokuapp.com/https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
+                    'X-Requested-With': 'XMLHttpRequest',
                     'crossDomain':true,
                     'mode': 'no-cors',
                     'Access-Control-Allow-Credentials': true,
