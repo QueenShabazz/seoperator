@@ -77,8 +77,8 @@ export default class Search extends Component{
                 method: "GET",
                 headers:{
                     'mode': 'cors',
+                    'Access-Control-Allow-Origin': '*' ,
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://seosift.com',
                     'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
                 }
             })
