@@ -76,7 +76,7 @@ export default class Search extends Component{
             "https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
-                    'mode': 'no-cors',
+                    'mode': 'cors',
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': 'https://seosift.com',
                     'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
