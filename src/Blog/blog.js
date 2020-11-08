@@ -78,7 +78,7 @@ export default class Search extends Component{
             "https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
-                    'mode': cors,
+                    'mode': 'no-cors',
                     'Access-Control-Allow-Origin': '*' ,
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
