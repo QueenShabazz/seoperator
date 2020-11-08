@@ -73,7 +73,7 @@ export default class Signup extends Component {
  
   render() {
     return (
-      <>
+      <div style={{flexDirection:"column"}}>
       <div  id="signup" style={{height: "15vh"}}></div>
         <h1 id="#login">
           Signup 
@@ -113,7 +113,7 @@ export default class Signup extends Component {
 
         </div>
        
-      </>
+      </div>
     )
   }
 }
