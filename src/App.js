@@ -7,7 +7,6 @@ import Layout from './Layout/layout';
 import Blog from './Blog/blog';
 import {BrowserRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import createHistory from 'history/createBrowserHistory';
@@ -61,9 +60,9 @@ function App() {
     <AdSense.Google
   client='ca-pub-8988366551421623'
   slot='4555630407'
-  style={{ display: 'block' }}
-  layout='in-article'
-  format='fluid'
+  // style={{ display: 'block' }}
+  // layout='in-article'
+  // format='fluid'
 />
 </>
 </FirebaseAuthProvider>
