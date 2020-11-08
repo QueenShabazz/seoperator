@@ -13,7 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import createHistory from 'history/createBrowserHistory';
 import firebase from "firebase/app";
 import "firebase/auth";
-import { FirestoreProvider } from "@react-firebase/firestore";
 
 const history = createHistory();
 const user = localStorage.user
