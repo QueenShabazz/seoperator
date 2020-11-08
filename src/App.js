@@ -30,7 +30,8 @@ const config = {
   appId: "1:7941375871:web:4131f01d6e9b4813ad3c4a",
   measurementId: "G-0V33FT5SN2"
 };
- 
+import AdSense from 'react-adsense';
+
 function App() {
   return (
    user?
@@ -58,6 +59,13 @@ function App() {
       </Switch> 
      </Layout>
     </BrowserRouter> 
+    <AdSense.Google
+  client='ca-pub-8988366551421623'
+  slot='4555630407'
+  style={{ display: 'block' }}
+  layout='in-article'
+  format='fluid'
+/>
 </>
 </FirebaseAuthProvider>
 :
