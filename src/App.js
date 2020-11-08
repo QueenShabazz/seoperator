@@ -41,7 +41,7 @@ function App() {
     </BrowserRouter>
 </>:
  <> 
- {console.log(localStorage.user, 'not working')}
+ 
     <BrowserRouter history={history} basename='/' forceRefresh={true}>
       <Layout>
       <Switch>
