@@ -16,6 +16,7 @@ import "firebase/auth";
 import {
   FirebaseAuthProvider
 } from "react-firebase-auth-provider";
+var cors = require('cors')
 
 const history = createHistory();
 const user = localStorage.user

@@ -5,6 +5,8 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './blog.css'
+var cors = require('cors')
+
 //REFACTOR INTO STATELESS COMPONENT TO USE HOOKS FOR POPUP MODAL
 function MyVerticallyCenteredModal(props) {
     return (
@@ -76,7 +78,7 @@ export default class Search extends Component{
             "https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
-                    'mode': 'cors',
+                    'mode': cors,
                     'Access-Control-Allow-Origin': '*' ,
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
