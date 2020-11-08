@@ -13,10 +13,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import createHistory from 'history/createBrowserHistory';
 import firebase from "firebase/app";
 import "firebase/auth";
+import {
+  FirebaseAuthProvider
+} from "react-firebase-auth-provider";
 
 const history = createHistory();
 const user = localStorage.user
-
+const config = {
+  apiKey: "AIzaSyBucgtabvE1xYbbvrtRy-Vja9X5DzaS3-Y",
+  authDomain: "seosift.firebaseapp.com",
+  databaseURL: "https://seosift.firebaseio.com",
+  projectId: "seosift",
+  storageBucket: "seosift.appspot.com",
+  messagingSenderId: "7941375871",
+  appId: "1:7941375871:web:4131f01d6e9b4813ad3c4a",
+  measurementId: "G-0V33FT5SN2"
+};
+ 
 function App() {
   return (
    user?
