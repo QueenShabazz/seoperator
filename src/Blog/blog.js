@@ -73,7 +73,7 @@ export default class Search extends Component{
     async componentDidMount(){
         
         await fetch (
-            "https://cors-anywhere.herokuapp.com/https://seosifting.herokuapp.com/demo/all", {
+            "https://seosifting.herokuapp.com/demo/all", {
                 method: "GET",
                 headers:{
                     'mode': 'no-cors',
