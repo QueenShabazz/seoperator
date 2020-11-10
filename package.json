@@ -15,7 +15,7 @@
     "react-adsense": "^0.1.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-firebase": "^2.2.8",
+    "react-firebase"np: "^2.2.8",
     "react-firebase-auth-provider": "^0.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
